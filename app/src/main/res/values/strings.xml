@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InstaFamous</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="like_str">likes</string>
+    <string name="viewComments1">View all </string>
+    <string name="viewComments2"> comments!</string>
+    <string name="comments_title">COMMENTS</string>
+    <string name="err_no_internet">Please check your internet connectivity!!</string>
+    <string name="err_cannotload">Could not load the feed at this time!!</string>
+
+</resources>

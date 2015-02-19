@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="instagram_blue" type="color">#2A5C83</item>
+    <item name="location_blue" type="color">#5EA3DA</item>
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="padding_color" type="color">#EEEEEE</item>
+</resources>

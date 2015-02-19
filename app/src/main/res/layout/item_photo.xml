@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:id="@+id/ivProfilePic"
+        android:layout_width="@dimen/profile_pic_dim"
+        android:layout_height="@dimen/profile_pic_dim"
+        android:paddingLeft="@dimen/activity_profile_pic_padding"
+        android:paddingRight="@dimen/activity_profile_pic_padding"
+        android:paddingTop="@dimen/activity_profile_pic_padding"
+        android:paddingBottom="@dimen/activity_profile_pic_padding"
+        android:src="@drawable/ic_launcher"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_toRightOf="@+id/ivProfilePic"
+        android:layout_alignBottom="@+id/ivProfilePic"
+        android:text="sampleusername"
+        android:layout_alignTop="@+id/ivProfilePic"
+        android:gravity="center_vertical"
+        android:textColor="@color/instagram_blue"/>
+
+    <ImageView
+        android:id="@+id/ivClock"
+        android:layout_width="@dimen/clock_dim"
+        android:layout_height="@dimen/clock_dim"
+        android:src="@drawable/clock"
+        android:layout_toLeftOf="@+id/tvCreatedAt"
+        android:layout_alignBottom="@+id/ivProfilePic"
+        android:layout_alignTop="@+id/ivProfilePic"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvCreatedAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_alignBottom="@+id/ivProfilePic"
+        android:layout_alignTop="@+id/ivProfilePic"
+        android:text="1 hour ago"
+        android:layout_alignRight="@+id/ivPhoto"
+        android:gravity="center"
+        android:textSize="@dimen/created_font_size"/>
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/loading"
+        android:scaleType="centerInside"
+        android:minHeight="50dp"
+        android:layout_below="@+id/ivProfilePic" />
+
+    <TextView
+        android:id="@+id/tvLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/instagram_blue"
+        android:textStyle="bold"
+        android:gravity="fill"
+        android:text="3,222 likes"
+        android:drawableLeft="@drawable/heart"
+        android:layout_below="@+id/ivPhoto"/>
+
+    <TextView
+        android:id="@+id/tvCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLikes"
+        android:text="sample_unformatted_caption"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:paddingBottom="@dimen/activity_horizontal_margin"/>
+</RelativeLayout>

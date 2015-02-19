@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">10dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+    <dimen name="activity_profile_pic_padding">7dp</dimen>
+    <dimen name="divider_padding">16dp</dimen>
+    <dimen name="profile_pic_dim">50dp</dimen>
+    <dimen name="clock_dim">20dp</dimen>
+    <dimen name="created_font_size">10sp</dimen>
+</resources>
