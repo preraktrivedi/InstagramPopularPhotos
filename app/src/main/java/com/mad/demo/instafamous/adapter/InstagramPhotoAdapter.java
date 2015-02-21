@@ -105,15 +105,19 @@ public class InstagramPhotoAdapter extends ArrayAdapter<InstagramPhoto> {
 
         // This resizes the image before loading it so that the aspect ratio is maintained.
         // (giving us a square image in this case)
-        Picasso.with(getContext()).
-                load(photo.getImgUrl()).
-                resize(targetWidth, targetWidth / aspectRatio).
-                placeholder(R.drawable.loading).
-                error(R.drawable.error).
-                into(viewHolder.ivPhoto); //asynchronous request
+        Picasso.with(getContext())
+                .load(photo.getImgUrl())
+                .resize(targetWidth, targetWidth / aspectRatio)
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
+                .into(viewHolder.ivPhoto);
 
         // This uses the circle transform so the profile picture is loaded into a circle
-        Picasso.with(getContext()).load(photo.getProfilePicUrl()).transform(new CircleTransform())
+        Picasso.with(getContext())
+                .load(photo.getProfilePicUrl())
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
+                .transform(new CircleTransform())
                 .into(viewHolder.ivProfilePic);
 
         return convertView;

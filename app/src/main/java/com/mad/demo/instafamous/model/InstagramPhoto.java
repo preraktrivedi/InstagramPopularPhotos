@@ -1,45 +1,30 @@
 package com.mad.demo.instafamous.model;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class InstagramPhoto {
 
-    private String type;
-    private String username;
-    private String caption;
-    private String imgUrl;
-    private String profilePicUrl;
+    public static InstagramPhoto sampleInstagramOfflineObject(int i) {
+        InstagramPhoto photo = new InstagramPhoto();
+
+        photo.setUsername("sampleusername" + i);
+        photo.setImgUrl("http://sampleurlfordemo.xyzzzz");
+        photo.setImgHeight(480);
+        photo.setImgWidth(480);
+        photo.setType("photo");
+        photo.setLikesCount(i * 239);
+        long sampleCreatedAt = (System.currentTimeMillis()/1000) - (i*3600*36); //Intervals of 36 hours
+        photo.setCreatedAt(sampleCreatedAt);
+        photo.setProfilePicUrl("http://sampleurlfordemo.xyzzzz");
+        photo.setCaption("Sample caption for photo " + i);
+
+        return photo;
+    }
+
+    public int imgHeight, imgWidth, likesCount;
+    private String type, username, caption, imgUrl, profilePicUrl;
     private long createdAt;
-    private JSONArray tags;
-    private JSONArray allComments;
-
-    public JSONArray getAllComments() {
-        return allComments;
-    }
-
-    public void setAllComments(JSONArray allComments) {
-        this.allComments = allComments;
-    }
-
-    public int getNumComments() {
-        return numComments;
-    }
-
-    public void setNumComments(int numComments) {
-        this.numComments = numComments;
-    }
-
-    private int numComments;
-
-    public JSONArray getTags() {
-        return tags;
-    }
-
-    public void setTags(JSONArray tags) {
-        this.tags = tags;
-    }
 
     public long getCreatedAt() {
         return createdAt;
@@ -56,11 +41,6 @@ public class InstagramPhoto {
     public void setProfilePicUrl(String profilePicUrl) {
         this.profilePicUrl = profilePicUrl;
     }
-
-    public int imgHeight;
-    public int imgWidth;
-    public int likesCount;
-
 
     public String getCaption() {
         return caption;
@@ -134,18 +114,9 @@ public class InstagramPhoto {
         photo.setProfilePicUrl(photoJSON.getJSONObject("user").
                 getString("profile_picture"));
         photo.setCreatedAt(photoJSON.getLong("created_time"));
-        photo.setTags(photoJSON.getJSONArray("tags"));
 
         if (photoJSON.optJSONObject("caption") != null) {
             photo.setCaption(photoJSON.getJSONObject("caption").getString("text"));
-        }
-
-        if (photoJSON.optJSONObject("comments") != null) {
-            JSONObject commentsObj = photoJSON.getJSONObject("comments");
-
-            photo.setNumComments(commentsObj.getInt("count"));
-            JSONArray commentsArr = commentsObj.getJSONArray("data");
-            photo.setAllComments(commentsArr);
         }
         return photo;
     }
